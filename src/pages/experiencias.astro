@@ -1,0 +1,101 @@
+---
+import Layout from '../layouts/BlogPost.astro';
+import robot from '../assets/upa.jpeg';
+import valle from '../assets/VB.jpeg';
+import hackath from '../assets/hack.jpeg';
+import desf from '../assets/desfile.jpeg';
+
+---
+
+<Layout>
+    <title>Experiencias</title>
+	<!-- Galería de fotos -->
+	<div class="gallery-section">
+		<h2 style="font-size: 50px;">Momentos destacados</h2>
+		<div class="gallery-grid">
+			<div class="gallery-item">
+				<img src={robot.src} 
+				alt="UPA" />
+				<p class="gallery-description">Participación en concurso de robots destructor llevado a cabo en la Universidad Politécnica Atlacomulco</p>
+			</div>
+			
+			<div class="gallery-item">
+				<img src={valle.src} 
+				alt="TESVB" />
+				<p class="gallery-description">Participación en concurso de sumo de robots llevado a cabo en el Tecnológico de Estudios Superiores Valle de Bravo</p>
+			</div>
+			
+			<div class="gallery-item">
+				<img src={hackath.src} alt="Hackathon" />
+				<p class="gallery-description">Participación en el Hackathon realizado por la fundación Interledger en las instalaciones del CEFODEN</p>
+			</div>
+			
+			<div class="gallery-item">
+				<img src={desf.src} 
+				alt="Desfile del 20 de septiembre" />
+				<p class="gallery-description">Participación en el desfile realizado el 19 de septiembre en conmemoración al aniversario de la independencia</p>
+			</div>
+		</div>
+	</div>
+
+</Layout>
+
+<style>
+	.gallery-section {
+		margin: 3rem 0;
+	}
+
+	.gallery-section h2 {
+		text-align: center;
+		margin-bottom: 2rem;
+		font-size: 1.8rem;
+		color: #333;
+	}
+
+	.gallery-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+		gap: 1.5rem;
+		margin-bottom: 2rem;
+	}
+
+	.gallery-item {
+		background: #f9f9f9;
+		border-radius: 8px;
+		overflow: hidden;
+		box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+		transition: transform 0.3s ease, box-shadow 0.3s ease;
+	}
+
+	.gallery-item:hover {
+		transform: translateY(-5px);
+		box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+	}
+
+	.gallery-item img {
+		width: 100%;
+		height: 250px;
+		object-fit: cover;
+		display: block;
+	}
+
+	.gallery-description {
+		padding: 1rem;
+		font-size: 0.95rem;
+		color: #555;
+		text-align: center;
+		margin: 0;
+		line-height: 1.5;
+	}
+
+	@media (max-width: 768px) {
+		.gallery-grid {
+			grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+			gap: 1rem;
+		}
+
+		.gallery-item img {
+			height: 200px;
+		}
+	}
+</style>

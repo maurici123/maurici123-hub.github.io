@@ -1,0 +1,42 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Footer from '../components/Footer.astro';
+import Header from '../components/Header.astro';
+import mauricio from '../assets/mau.jpeg';
+import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead title=Mauricio description={SITE_DESCRIPTION} />
+	</head>
+	<body>
+		<Header />
+		<main>
+			<h1 class="ti">BIENVENIDO A MI BLOG PERSONAL</h1>
+		
+			<img 
+			src={mauricio.src}
+			alt="Foto Mauricio Solis"
+			class="im">
+
+		</br>
+			<a 
+			href="/about"
+			class="boton"
+			>
+			Saber más sobre Mauricio
+			</a>
+
+
+		</main>
+		<Footer />
+	</body>
+
+	<style>
+		a{
+			text-decoration: none;
+		}
+	</style>
+</html>
