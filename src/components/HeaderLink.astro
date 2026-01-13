@@ -5,10 +5,10 @@ type Props = HTMLAttributes<'a'>;
 
 const { href, class: className, ...props } = Astro.props;
 const base = import.meta.env.BASE_URL ?? '/';
-const pathname = Astro.url.pathname.replace(import.meta.env.BASE_URL, '');
+const pathname = Astro.url.pathname.replace(base, '');
 const subpath = pathname.match(/[^\/]+/g);
 const isActive = href === pathname || href === '/' + (subpath?.[0] || '');
-const computedHref = href === '/' ? base : base + href.replace(/^\//, '');
+const computedHref = new URL(href, Astro.site).pathname;
 ---
 
 <a href={computedHref} class:list={[className, { active: isActive }]} {...props}>
