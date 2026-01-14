@@ -1,43 +1,30 @@
 ---
-import BaseHead from '../components/BaseHead.astro';
-import Footer from '../components/Footer.astro';
-import Header from '../components/Header.astro';
-import mauricio from '../assets/mau.jpeg';
-import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
-const aboutHref = new URL('about', Astro.site).pathname;
+import BaseHead from "../components/BaseHead.astro";
+import Footer from "../components/Footer.astro";
+import Header from "../components/Header.astro";
+import mauricio from "../assets/mau.jpeg";
+import { SITE_DESCRIPTION, SITE_TITLE } from "../consts";
+const aboutHref = "/maurici123-hub.github.io/about";
 ---
 
 <!doctype html>
 <html lang="en">
-	<head>
-		<BaseHead title=Mauricio description={SITE_DESCRIPTION} />
-	</head>
-	<body>
-		<Header />
-		<main>
-			<h1 class="ti">BIENVENIDO A MI BLOG PERSONAL</h1>
-		
-			<img 
-			src={mauricio.src}
-			alt="Foto Mauricio Solis"
-			class="im">
+  <head>
+    <BaseHead title="Mauricio" description={SITE_DESCRIPTION} />
+  </head>
+  <body>
+    <Header />
+    <main>
+      <h1 class="ti">BIENVENIDO A MI BLOG PERSONAL</h1>
 
-		</br>
-			<a 
-			href={aboutHref}
-			class="boton"
-			>
-			Saber más sobre Mauricio
-			</a>
+      <img src={mauricio.src} alt="Foto Mauricio Solis" class="im" />
+    </main>
+    <a href={aboutHref} class="boton"> Saber más sobre Mauricio </a>
 
-
-		</main>
-		<Footer />
-	</body>
-
-	<style>
-		a{
-			text-decoration: none;
-		}
-	</style>
+    <Footer />
+  </body><style>
+    a {
+      text-decoration: none;
+    }
+  </style>
 </html>
